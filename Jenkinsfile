@@ -13,11 +13,6 @@ pipeline {
         sh 'pip install --user --no-cache-dir -r requirements.txt'
       }
     }
-    stage('Run Flask'){
-          steps{
-               sh "python app.py"
-          }
-    }
     stage('test') {
       steps {
         sh 'python tests.py'
