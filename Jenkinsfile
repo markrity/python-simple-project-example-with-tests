@@ -1,6 +1,7 @@
 pipeline {
   agent { docker { image 'python:3.7.2' } }
   stages {
+    // First stage , get files from your GitHub repository.
     stage('Git'){
         steps{
             checkout scm
