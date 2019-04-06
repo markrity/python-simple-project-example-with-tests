@@ -1,5 +1,6 @@
 pipeline {
   agent { docker { image 'python:3.7.2' } }
+  environment {HOME = '/tmp'} 
   stages {
     // First stage , get files from your GitHub repository.
     stage('Git'){
@@ -9,7 +10,7 @@ pipeline {
     }
     stage('build') {
       steps {
-        sh 'pip install --no-cache-dir -r requirements.txt'
+        sh 'pip install --user --no-cache-dir -r requirements.txt'
       }
     }
     stage('Run Flask'){
