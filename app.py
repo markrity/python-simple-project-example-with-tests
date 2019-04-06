@@ -13,3 +13,9 @@ def hello_user(username):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')     # open for everyone
+    ############# For tests  #############
+    import xmlrunner
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
+    ###########################################
+    unittest.main()
